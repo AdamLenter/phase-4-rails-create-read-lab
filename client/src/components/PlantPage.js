@@ -21,9 +21,13 @@ function PlantPage() {
     setPlants(updatedPlantsArray);
   }
 
-  const displayedPlants = plants.filter((plant) => {
-    return plant.name.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+  let displayedPlants = [];
+
+  if(plants.length > 0) {
+    displayedPlants = plants.filter((plant) => {
+      return plant.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+  }
 
   return (
     <main>
